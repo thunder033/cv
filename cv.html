@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greg Rozmarynowycz</title>
+    <style>
+        html, body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: Bahnschrift;
+            margin: 0 auto;
+            background: #333;
+            -webkit-print-color-adjust: exact !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .no-pii .pii {
+            display: none;
+        }
+
+        .normal-length .verbose {
+            display: none;
+        }
+
+        .page {
+            background: #fff;
+            display: block;
+            margin: 0 auto 0.5cm;
+            width: 21cm;
+            height: 29.7cm;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        @media print {
+            body, .page {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            @page {
+                margin: 0 !important;
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+        }
+
+        .clear-float:before,
+        .clear-float:after {
+            content: "";
+            display: table;
+        }
+        .clear-float:after {
+            clear: both;
+        }
+
+        .clear-float.clear-left:after {
+            clear: left;
+        }
+
+        header {
+            background: #ddad9e;
+            padding: .5em 1.5em 1em;
+            box-sizing: border-box;
+            /*perspective-origin: top left;*/
+            /*transform: perspective(1000px) rotateY(45deg) rotateX(20deg) scale(.95);*/
+            /*text-shadow: 1px 2px 2px rgba(0, 0, 0, .35);*/
+            /*box-shadow: 3px 3px 3px rgba(0, 0, 0, .45);*/
+            /*-webkit-text-stroke: 0.5px #863e2a;*/
+            /*width: 135%;*/
+            /*left: 10px;*/
+            position: relative;
+            border-bottom: 1em #6e3828 solid;
+        }
+
+        header h1 {
+            font-weight: 500;
+            font-size: 17pt;
+            color: #6e3828;
+            margin-bottom: 0;
+            background: #ddad9e;
+            position: relative;
+            display: inline-block;
+        }
+
+        .accent-3 {
+            border: 1px #ae2b06 solid;
+            width: 150%;
+            margin: -1em -20% 1em;
+        }
+
+        .accent-red, .accent-red:before, .accent-red:after {
+            content: '';
+            background: #ae2b06;
+            border-radius: 4px;
+            position: absolute;
+        }
+
+        .accent-1, .accent-1:before, .accent-1:after {
+            height: 1em;
+            width: 6em;
+            bottom: -.5em;
+            left: 9.5em;
+        }
+
+        .accent-1:before, .accent-1:after {
+            width: 1em;
+            right: -1.25em;
+            left: unset;
+            bottom: 0;
+        }
+
+        .accent-1:after {
+            right: -2em;
+            width: .5em;
+        }
+
+        header h2 {
+            font-weight: normal;
+            font-size: 11pt;
+            color: #6e3828;
+            margin-top: 0;
+        }
+
+        header ul {
+            text-align: right;
+            list-style: none;
+            margin: 0;
+            padding: .75em;
+            border-radius: 8px;
+            float: right;
+            background: #6e3828;
+            border-bottom: 3px #ae2b06 solid;
+            position: relative;
+        }
+
+        header ul:before, header ul:after {
+            position: absolute;
+            background: #6e3828;
+            border-radius: 8px;
+            width: 1.5em;
+            left: -1.75em;
+            content: '';
+            height: 100%;
+            top: 0;
+            border-bottom: 3px #ae2b06 solid;
+        }
+
+        header ul:after {
+            width: .75em;
+            left: -2.75em;
+        }
+
+        header a { color: #ddad9e; }
+
+        header ul li {
+            color: #ddad9e;
+            margin: .3em;
+            font-size: 10pt;
+        }
+
+        .icon {
+            float: right;
+            height: 1.25em;
+            margin-left: .2em;
+        }
+
+        .portrait {
+            width: 7em;
+            float: left;
+            border-radius: 8px;
+            position: relative;
+            z-index: 5;
+            background: #fff;
+            margin-right: 1em;
+        }
+
+        .portrait img {
+            width: 100%;
+            border-radius: 5px;
+            border: .5em #ae2b06 solid;
+            box-sizing: border-box;
+        }
+
+        .accent-2, .accent-2:before, .accent-2:after {
+            bottom: -.5em;
+            width: 1em;
+            height: 4.5em;
+            right: -.25em;
+        }
+
+        .accent-2:before, .accent-2:after {
+            height: 1em;
+            top: -1.25em;
+            right: 0;
+        }
+
+        .accent-2:after {
+            top: -2em;
+            height: .5em;
+        }
+
+        .personal-detail {
+            margin: .5em 0;
+        }
+
+        .personal-detail .icon {
+            float: none;
+            vertical-align: sub;
+            border: 1px #6e3828 solid;
+            border-radius: 4px;
+        }
+
+        .education {
+            float: right;
+            width: 18em;
+            font-size: 10pt;
+            background: #ddad9e;
+            padding: .75em;
+            box-sizing: border-box;
+            margin: .5em 1.75em .5em 1em;
+            position: relative;
+            border-radius: 8px;
+            border-bottom: 3px #6e3828 solid;
+        }
+
+        .education h3 {
+            background: #6e3828;
+            color: #ddad9e;
+            padding: .25em .5em;
+            margin: .5em -.65em .3em -.55em;
+            font-size: 11pt;
+        }
+
+        .education h4 {
+            margin: .1em;
+            font-size: 12pt;
+        }
+
+        .education h4+span {
+            display: inline-block;
+            margin-bottom: .4em;
+        }
+
+        .summary {
+            margin: .25em 0 .5em 1.75em;
+            font-size: 10.5pt;
+        }
+
+        .no-pii .summary {
+            margin-top: -2em;
+        }
+
+        .skills {
+            position: relative;
+            margin-left: 1.75em;
+            padding-left: 2em;
+        }
+
+        .skills h3 {
+            font-size: 11pt;
+            transform-origin: top left;
+            transform: rotate(-90deg);
+            width: 5em;
+            color: #ddad9e;
+            padding: .25em .75em;
+            position: absolute;
+            bottom: -2.75em;
+            left: 0;
+        }
+
+        .skills h3:after, .skills h3:before {
+            bottom: 0;
+            left: 6.75em;
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        .skills h3:after {
+            width: .75em;
+            left: 8.75em;
+        }
+
+        .category {
+            font-size: 9.5pt;
+            float: left;
+        }
+
+        .category ul {
+            margin: 0 1em 0 0;
+            padding-left: 1.5em;
+        }
+
+        .category h4 {
+            margin: .25em 0;
+            color: #6e3828;
+        }
+
+        .work-experience {
+            font-size: 9.5pt;
+        }
+
+        .work-experience h3, .hobbies h3 {
+            color: #6e3828;
+            font-size: 13pt;
+            margin: .75em 0 0 1.5em;
+        }
+
+        .experience {
+            padding: .5em 1.5em .5em 1em;
+            margin: .75em 1em;
+            border-left: 3px #ddad9e solid;
+            border-radius: 8px;
+        }
+
+        .experience h4 {
+            margin: 0;
+            color: #6e3828;
+        }
+
+        .experience h4 span {
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .experience h5 {
+            display: inline-block;
+            margin: .25em 0 0;
+            font-size: 9.5pt;
+        }
+
+        .experience h5 span {
+            font-weight: normal;
+        }
+
+        .experience ul {
+            padding-left: 1.75em;
+            margin: .1em 0 .45em 0;
+            font-family: Calibri, sans-serif;
+        }
+
+        .experience-skills {
+            color: #777;
+        }
+
+        h5+.experience-skills:before, h4 .experience-skills:before {
+            content: '| ';
+        }
+
+        .internship {
+            display: inline-block;
+            width: 27em;
+            padding-right: 0;
+            margin-top: 0;
+        }
+
+        #page-2 {
+            padding-top: 3em;
+        }
+
+        .hobbies ul {
+            margin: .5em 0 0 1.5em;
+            padding: 0;
+        }
+
+        .hobbies li {
+            display: inline-block;
+            background: #ddad9e;
+            width: 15rem;
+            height: 8rem;
+            vertical-align: top;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: .75em;
+            font-size: 10pt;
+            border-bottom: 3px #ae2b06 solid;
+            margin-right: .25em;
+        }
+
+        .hobbies li h4 {
+            color: #6e3828;
+            margin: 0 0 .25em;
+        }
+    </style>
+</head>
+<body class="normal-length">
+<div id="page-1" class="page">
+    <header>
+        <ul id="contact">
+            <li>+1 440 541 7907</li>
+            <li>greg@thunderlab.net</li>
+            <li><a href="http://linkedin.com/in/gregroz"><img class="icon" src="linkedin.png" />linkedin.com/in/gregroz</a></li>
+            <li><a href="http://github.com/thunder033"><img class="icon" src="github.png" />github.com/thunder033</a></li>
+        </ul>
+
+        <div class="portrait pii">
+            <img src="./portrait.jpg" alt="Portrait"/>
+        </div>
+
+        <h1>Greg Rozmarynowycz</h1>
+<!--        <div class="accent-3"></div>-->
+        <div class="accent-red accent-1"></div>
+    </header>
+    <main>
+        <div class="personal-detail pii">
+<!--            <img class="icon" src="usa-flag.svg"/>-->
+            <span>American &bullet; 1994-09-20 &bullet; Requires Work Permit</span>
+        </div>
+        <div class="clear-float"></div>
+        <aside class="education">
+            <h3>Education</h3>
+            <h4>Rochester Institute of Technology</h4>
+            <span>Rochester, NY, USA (2013 - 2017)</span><br>
+
+            <span><b>B.S., Video Game Design &amp; Development</b></span><br>
+            <span>Minor in Software Engineering</span><br>
+            <span>Magna cum laude, Honor's Program, Dean's List</span>
+
+            <h3>Languages</h3>
+            <span><b>English</b> - Native</span><br>
+            <span><b>Dutch</b> - B1/Intermediate</span><br>
+            <span>French - A1</span>
+            <div class="accent-red accent-2"></div>
+        </aside>
+
+        <div class="summary">
+            Driven, creative, conscientious full stack engineer. Five years of industry experience applying a disciplined approach across various domains.
+        </div>
+
+        <div class="skills">
+            <h3 class="accent-red">Skills</h3>
+            <div class="category">
+                <h4>Technical</h4>
+                <ul>
+                    <li>Angular/TypeScript</li>
+                    <li>REST, Websockets/Node.JS</li>
+                    <li>Real-time Architecture</li>
+                    <li>UI/UX Design</li>
+                    <li>Web Mobile/Edge Computing</li>
+                    <li>3D Graphics/Web GL</li>
+                    <li>Native; Java, Swift, C#, C++</li>
+                    <li>Web Accessibility & Security</li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h4>Process &amp; Project Delivery</h4>
+                <ul>
+                    <li>System Design & Architecture</li>
+                    <li>Codebase Health and Stability</li>
+                    <li>Dev-ops & Development Toolchains</li>
+                    <li>Technical Writing/UML</li>
+                    <li>Project Estimation</li>
+                    <li>Incremental Delivery</li>
+                    <li>Analytics and Logging</li>
+                    <li>QA Strategy & Automated Testing</li>
+                </ul>
+            </div>
+            <div class="clear-float clear-left"></div>
+        </div>
+
+        <section class="work-experience">
+            <h3>Experience</h3>
+            <div class="experience">
+                <h4>DroneDeploy<span>, San Francisco, CA, USA</span></h4>
+                <h5>Sr. Frontend Engineer - Flight, Frontend-Lead <span>(Oct 2019 &ndash; )</span></h5><br>
+                <span class="experience-skills">Angular/ReactiveX, Real-time & Edge Computing, iOS/Android, System Architecture</span>
+                <ul>
+                    <li>
+                        Head series of architecture initiatives to achieve and sustain enterprise-grade performance on flight planning and control systems.
+                        Decreased app startup time 50% and lifted 33% more flights above minimum percentile framerate threshold.
+                        Define approach to reliably process and upload media from drone flights at the edge, under variable network conditions.
+                    </li>
+                    <li>
+                        Define and guide implementation of frontend development patterns and approach to ensure consistent reliability and instrumentation across new and existing
+                        features under team surface area.
+                    </li>
+                    <li>
+                        Enabled flight UI automation with novel UI behavior capture and heuristic assertion framework, physics-based drone
+                        simulation, and faster-than-real-time execution. Increased UI development velocity and significantly reduces refactoring risk.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h4>JPMorgan Chase & Co.<span>, San Francisco, CA (Feb 2018 - Sep 2021)</span></h4>
+                <h5>UI Development Lead <span>(Apr 2019 &ndash; Sep 2019)</span></h5>
+                <span class="experience-skills">Team Development, TDD, Project Estimation, Agile/Scrum</span>
+                <ul>
+                    <li>
+                        Drive towards adoption of new technical governance model, boosting Scrum team morale through process reforms focused on
+                        engineering excellence, diligent analysis and triage of incoming work, and resolution of technical debt
+                    </li>
+                    <li>
+                        Introduced JS component testing strategy to Chase authenticated web app UI; prototyped and piloted a test harness for internal
+                        JS framework, pushed its development and uptake to head of framework intake queue, and now advise its development
+                    </li>
+                </ul>
+
+                <h5>JavaScript Engineer <span>(Nov 2018 &ndash; Apr 2019)</span></h5>
+                <span class="experience-skills">JavaScript/TypeScript, Web Accessibility & Security, CI/CD</span>
+                <ul>
+                    <li>
+                        Re-architectured key Chase.com UI module impacted by substantial tech debt, to cut initial load time 95%, with capability to
+                        deploy upgrade immediately and incrementally migrate 50 features, facilitating thousands of user scenarios
+                    </li>
+                    <li>
+                        Oversaw knowledge transfer of aggregator access UI development to new team, built extensive technical documentation, and
+                        advised on new features to enable seamless project transition and near-continual feature development
+                    </li>
+                </ul>
+
+                <h4>TEKSystems<span>, San Francisco, CA</span></h4>
+                <h5>Software Engineering Consultant at JPMorgan Chase &amp; Co. <span>(Feb 2018 - Nov 2018)</span></h5>
+                <ul>
+                    <li>
+                        Recognized for leading UI development of Chase aggregator access project; delivered key features, supporting complex
+                        integrations with dozens of third party services, while aligning disparate requirements from multiple business initiatives around a
+                        single implementation strategy. In the course of development, significantly reduced technical debt and feature regression rate.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience">
+                <h4>GE Digital<span>, San Ramon, CA</span></h4>
+                <h5>Software Engineer &ndash; Systems Integration & Deployment <span>(Jul 2017 - Jan 2018)</span></h5>
+                <span class="experience-skills">REST, Java, TypeScript, Web Security, CI/CD, SQL</span>
+                <ul>
+                    <li>
+                        Managed integration, security, and deployment of external vendor developed web
+                        service on Predix (Cloud Foundry) IIoT platform as lead technical contact. Assuming
+                        role mid-project, resolved all blockers and picked up outstanding tasks from vendor
+                    </li>
+                    <li>
+                        Enabled deployment of Docker containers on new DCOS platform, providing
+                        enhanced persistence and programmatic deployments, with TypeScript build scripts
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>
+                    Target<span>, Minneapolis, MN</span>
+                    <span>(Summer 2016)</span>
+                </h4>
+                <h5>Software Engineering Intern &ndash; Backend Engineering </h5><br>
+                <span class="experience-skills">Groovy, Web Security, ReactiveX, Mongo DB, AWS, Agile</span>
+                <ul>
+                    <li>
+                        Improved user experience of Target.com through improved data aggregation,
+                        diagnosing and resolving issues in Groovy Spring code base and Ansible playbooks
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>
+                    EnelX<span>, Rochester, NY</span>
+                    <span>(May 2015 - May 2016)</span>
+                </h4>
+                <h5>Software Engineering Intern &ndash; QA Automation Engineering</h5><br>
+                <span class="experience-skills">AngularJS, Node.JS, UI Automation, TDD, AWS, Agile</span>
+                <ul>
+                    <li>
+                        Delivered minor features and developed Selenium WebDriver test cases against an
+                        Angular/Node.JS presentation tier, consuming a RESTful business logic service
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="page-2" class="page">
+    <main>
+        <section class="work-experience">
+            <div class="experience internship">
+                <h4>ThunderLab<span>, Sheffield Village, OH</span></h4>
+                <h5>Freelance Web Developer <span>(2009 - 2019)</span></h5><br>
+                <div class="experience-skills">HTML, CSS, PHP, JavaScript, UX/UI</div>
+                <ul><li>Delivered & maintained websites for small businesses and local organizations on a contract basis; see portfolio at <a href="http://thunderlab.net/">http://thunderlab.net/</a></li></ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>Thunderforge - Student Game Venture/Independent Study</h4>
+                <h5>Team Lead/Programmer <span>(March 2014 - May 2016)</span></h5><br>
+                <div class="experience-skills">Game Engine, Physics &amp; Graphics, C#, JavaScript</div>
+                <ul><li>Lead a rotating group of peers across various game &amp; multimedia projects; see projects at <a href="http://thunderlab.net/games">http://thunderlab.net/games</a></li></ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>Rochester Institute of Technology Libraries<span>, Rochester, NY</span></h4>
+                <h5>Student Web Developer/Designer <span>(Sep 2013 - May 2015)</span></h5><br>
+                <div class="experience-skills">JQuery, HTML, CSS, UI/UX, Ruby, PHP, MySQL</div>
+                <ul><li>Built &amp; maintained library web tools and interfaces; see record of projects at <a href="http://thunderlab.net/TWC">http://thunderlab.net/TWC</a></li></ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>Vector Marketing Corporation<span>, Rocky Ridge, OH</span></h4>
+                <h5>Sales Representative <span>(Summer 2013, Summer 2014)</span></h5>
+                <ul>
+                    <li>Scheduled and performed in-home demonstrations of Cutco Cutlery; $11,000 career sales, promoted to Key Staff, accepted into the Leadership Academy</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="hobbies">
+            <h3>Hobbies &amp; Civic Engagement</h3>
+            <ul>
+                <li>
+                    <h4>Rock Climbing & Alpine Sports</h4>
+                    Snowboarding (since 2005), Sport Climbing (2017), Backpacking & Mountaineering (2018)
+                </li>
+                <li>
+                    <h4>Active Transportation Advocacy</h4>
+                    Engaged with biking and walking advocacy since 2019; ground-level involvement on safe-streets, transit, pedestrianization and urban greening projects
+                </li>
+                <li>
+                    <h4>Woodworking & Construction</h4>
+                    Build small furniture and volunteer with local affordable housing construction organization (Habitat for Humanity)
+                </li>
+            </ul>
+        </section>
+    </main>
+</div>
+</body>
+</html>
