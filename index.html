@@ -21,6 +21,14 @@
             display: none;
         }
 
+        body.en .nl {
+            display: none;
+        }
+
+        body.nl .en {
+            display: none;
+        }
+
         .page {
             background: #fff;
             display: block;
@@ -63,13 +71,6 @@
             background: #ddad9e;
             padding: .5em 1.5em 1em;
             box-sizing: border-box;
-            /*perspective-origin: top left;*/
-            /*transform: perspective(1000px) rotateY(45deg) rotateX(20deg) scale(.95);*/
-            /*text-shadow: 1px 2px 2px rgba(0, 0, 0, .35);*/
-            /*box-shadow: 3px 3px 3px rgba(0, 0, 0, .45);*/
-            /*-webkit-text-stroke: 0.5px #863e2a;*/
-            /*width: 135%;*/
-            /*left: 10px;*/
             position: relative;
             border-bottom: 1em #6e3828 solid;
         }
@@ -82,12 +83,6 @@
             background: #ddad9e;
             position: relative;
             display: inline-block;
-        }
-
-        .accent-3 {
-            border: 1px #ae2b06 solid;
-            width: 150%;
-            margin: -1em -20% 1em;
         }
 
         .accent-red, .accent-red:before, .accent-red:after {
@@ -384,7 +379,7 @@
         }
     </style>
 </head>
-<body class="normal-length">
+<body class="normal-length nl">
 <div id="page-1" class="page">
     <header>
         <ul id="contact">
@@ -399,61 +394,122 @@
         </div>
 
         <h1>Greg Rozmarynowycz</h1>
-<!--        <div class="accent-3"></div>-->
         <div class="accent-red accent-1"></div>
     </header>
     <main>
         <div class="personal-detail pii">
-<!--            <img class="icon" src="usa-flag.svg"/>-->
-            <span>American &bullet; 1994-09-20 &bullet; Requires Work Permit</span>
+            <span class="en">American &bullet; 1994-09-20 &bullet; Requires Work Permit</span>
+            <span class="nl">Amerikaans &bullet; 1994-09-20 &bullet; Vereist Werkvergunning</span>
         </div>
         <div class="clear-float"></div>
         <aside class="education">
-            <h3>Education</h3>
+            <h3>
+                <span class="en">Education</span>
+                <span class="nl">Opleidingen</span>
+            </h3>
             <h4>Rochester Institute of Technology</h4>
-            <span>Rochester, NY, USA (2013 - 2017)</span><br>
+            <span>
+                <span class="en">Rochester, NY, USA (2013 - 2017)</span>
+            <span class="nl">Rochester, NY, VS (2013 - 2017)</span>
+            </span>
+            <br>
 
             <span><b>B.S., Video Game Design &amp; Development</b></span><br>
             <span>Minor in Software Engineering</span><br>
             <span>Magna cum laude, Honor's Program, Dean's List</span>
 
-            <h3>Languages</h3>
-            <span><b>English</b> - Native</span><br>
-            <span><b>Dutch</b> - B1/Intermediate</span><br>
-            <span>French - A1</span>
+            <h3>
+                <span class="en">Languages</span>
+                <span class="nl">Talen</span>
+            </h3>
+            <span class="en"><b>English</b> - Native</span>
+            <span class="nl"><b>Engels</b> - Moedertaal</span><br>
+            <span class="en"><b>Dutch</b> - B1/Intermediate</span>
+            <span class="nl"><b>Nederlands</b> - B1/Tussenliggend</span><br>
+            <span class="en">French - A1</span>
+            <span class="nl">Frans - A1</span>
             <div class="accent-red accent-2"></div>
         </aside>
 
         <div class="summary">
-            Driven, creative, conscientious full stack engineer. Five years of industry experience applying a disciplined approach across various domains.
+            <span class="en">
+                Driven, creative, conscientious full-stack engineer. Five years of industry experience applying a disciplined approach across various domains.
+            </span>
+            <span class="nl">
+                Gedreven, creatief, nauwgezet full-stack engineer. Vijf jaren industriële ervaring, wat een gedisciplineerde aanpak over verscheidene domeinen lever.
+            </span>
         </div>
 
         <div class="skills">
-            <h3 class="accent-red">Skills</h3>
+            <h3 class="accent-red">
+                <span class="en">Skills</span>
+                <span class="nl">Vaardigheden</span>
+            </h3>
             <div class="category">
-                <h4>Technical</h4>
+                <h4>
+                    <span class="en">Technical</span>
+                    <span class="nl">Technisch</span>
+                </h4>
                 <ul>
                     <li>Angular/TypeScript</li>
                     <li>REST, Websockets/Node.JS</li>
-                    <li>Real-time Architecture</li>
-                    <li>UI/UX Design</li>
-                    <li>Web Mobile/Edge Computing</li>
-                    <li>3D Graphics/Web GL</li>
+                    <li>
+                        <span class="en">Real-time Architecture</span>
+                        <span class="nl">Real-time Architectuur</span>
+                    </li>
+                    <li>
+                        <span class="en">UI/UX Design</span>
+                        <span class="nl">UI/UX Ontwerp</span>
+                    </li>
+                    <li>
+                        <span>Web Mobile/Edge Computing</span>
+                    </li>
+                    <li>
+                        <span class="en">3D Graphics/Web GL</span>
+                        <span class="nl">3D-Graphics/Web GL</span>
+                    </li>
                     <li>Native; Java, Swift, C#, C++</li>
-                    <li>Web Accessibility & Security</li>
+                    <li>
+                        <span class="en">Web Accessibility &amp; Security</span>
+                        <span class="nl">Webtoegankelijkheid &amp; Veiligheid</span>
+                    </li>
                 </ul>
             </div>
 
             <div class="category">
-                <h4>Process &amp; Project Delivery</h4>
+                <h4>
+                    <span class="en">Process &amp; Project Delivery</span>
+                    <span class="nl">Proces en Projectlevering</span>
+                </h4>
                 <ul>
-                    <li>System Design & Architecture</li>
-                    <li>Codebase Health and Stability</li>
-                    <li>Dev-ops & Development Toolchains</li>
-                    <li>Technical Writing/UML</li>
-                    <li>Project Estimation</li>
-                    <li>Incremental Delivery</li>
-                    <li>Analytics and Logging</li>
+                    <li>
+                        <span class="en">System Design &amp; Architecture</span>
+                        <span class="nl">Systeemontwerp &amp; Architectuur</span>
+                    </li>
+                    <li>
+                        <span class="en">Codebase Health and Stability</span>
+                        <span class="nl">Codebase-status en Stabiliteit</span>
+                    </li>
+                    <li>
+                        <span class="en">Dev-ops &amp; Development Toolchains</span>
+                        <span class="nl">Dev-ops &amp; Ontwikkeling Toolchains</span>
+                    </li>
+                    <li>
+                        <span class="en">Technical Writing/UML</span>
+                        <span class="nl">Technisch Schrijven (en)/UML</span>
+                    </li>
+                    <li>
+                        <span class="en">Project Estimation</span>
+                        <span class="nl">Project inspanning evaluatie</span>
+                    </li>
+                    <li>
+                        <span class="en">Incremental Delivery</span>
+                        <span class="nl">Incrementele Levering</span>
+                    </li>
+                    <li>
+                        <span class="en">Analytics and Logging</span>
+                        <span class="nl">Analytics and Loggen</span>
+                    </li>
                     <li>QA Strategy & Automated Testing</li>
                 </ul>
             </div>
@@ -461,24 +517,41 @@
         </div>
 
         <section class="work-experience">
-            <h3>Experience</h3>
+            <h3>
+                <span class="en">Experience</span>
+                <span class="nl">Werkervaring</span>
+            </h3>
             <div class="experience">
-                <h4>DroneDeploy<span>, San Francisco, CA, USA</span></h4>
-                <h5>Sr. Frontend Engineer - Flight, Frontend-Lead <span>(Oct 2019 &ndash; )</span></h5><br>
+                <h4 class="en">DroneDeploy<span>, San Francisco, CA, USA</span></h4>
+                <h4 class="nl">DroneDeploy<span>, San Francisco, CA, VS</span></h4>
+                <h5>Sr. Frontend Engineer - Flight, Frontend-Lead <span>(Oct 2019 &ndash; )</span></h5><br/>
                 <span class="experience-skills">Angular/ReactiveX, Real-time & Edge Computing, iOS/Android, System Architecture</span>
                 <ul>
-                    <li>
+                    <li class="en">
                         Head series of architecture initiatives to achieve and sustain enterprise-grade performance on flight planning and control systems.
                         Decreased app startup time 50% and lifted 33% more flights above minimum percentile framerate threshold.
                         Define approach to reliably process and upload media from drone flights at the edge, under variable network conditions.
                     </li>
-                    <li>
+                    <li class="nl">
+                        Leid serie van architectuur initiatieven voor enterprise-grade uitvoering on vlucht planning en controlesystemen.
+                        Verminderd app opstarttijd 50% en tild 33% meer vluchten boven minimale percentiel framerate-drempel op.
+                        Bepaald aanpak om betrouwbaar verwerken en uploaden media van dronevluchten op de rand, onder variabele netwerkvoorwaarden.
+                    </li>
+                    <li class="en">
                         Define and guide implementation of frontend development patterns and approach to ensure consistent reliability and instrumentation across new and existing
                         features under team surface area.
                     </li>
-                    <li>
+                    <li class="nl">
+                        Bepaal en begeleid implementatie van frontend ontwikkelingspatronen en aanpak om consistente betrouwbaarheid instrumentatie te garanderen in nieuwe en
+                        bestaande functies onder teamoppervlakte.
+                    </li>
+                    <li class="en">
                         Enabled flight UI automation with novel UI behavior capture and heuristic assertion framework, physics-based drone
                         simulation, and faster-than-real-time execution. Increased UI development velocity and significantly reduces refactoring risk.
+                    </li>
+                    <li class="nl">
+                        Ingeschakeld vlucht UI-automatisering met vernieuwende UI gedrag vastleggen en heuristische bewering kader, op fysica gebaseerde
+                        dronesimulatie, en sneller dan realtime executie. Nam UI ontwikkelen snelheid en verminderd refactoring risico toe.
                     </li>
                 </ul>
             </div>
