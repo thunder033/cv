@@ -13,18 +13,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .no-pii .pii {
-            display: none;
-        }
-
-        .normal-length .verbose {
-            display: none;
-        }
-
-        body.en .page .nl {
-            display: none;
-        }
-
+        .no-pii .pii,
+        .normal-length .verbose,
+        body.en .page .nl,
         body.nl .page .en {
             display: none;
         }
@@ -356,6 +347,10 @@
 
         .experience h5 span {
             font-weight: normal;
+        }
+
+        .experience h5 span.en, .experience h5 span.nl {
+            font-weight: bold;
         }
 
         .experience ul {
@@ -781,49 +776,112 @@
                 </h5><br>
                 <div class="experience-skills">HTML, CSS, PHP, JavaScript, UX/UI</div>
                 <ul>
-                    <li class="en">Delivered & maintained websites for small businesses and local organizations on a contract basis; see portfolio at <a href="http://thunderlab.net/">http://thunderlab.net/</a></li>
-                    <li class="nl">Leverde en handhaafde website voor kleine onderneming en lokale organisaties op contractbasis; bekijk portefeuille op <a href="http://thunderlab.net/">http://thunderlab.net/</a></li>
+                    <li class="en">
+                        Delivered & maintained websites for small businesses and local organizations on a
+                        contract basis; see portfolio at <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
+                    </li>
+                    <li class="nl">
+                        Leverde en handhaafde website voor kleine onderneming en lokale organisaties op
+                        contractbasis. Bekijk portefeuille op <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="experience internship">
                 <h4 class="en">Thunderforge - Student Game Venture/Independent Study</h4>
-                <h4 class="nl">Thunderforge - Student Speel Onderneming/Onafhankelijke Studie</h4>
-                <h5>Team Lead/Programmer <span>(March 2014 - May 2016)</span></h5><br>
-                <div class="experience-skills">Game Engine, Physics &amp; Graphics, C#, JavaScript</div>
-                <ul><li>Lead a rotating group of peers across various game &amp; multimedia projects; see projects at <a href="http://thunderlab.net/games">http://thunderlab.net/games</a></li></ul>
+                <h4 class="nl">Thunderforge - Student Speel Onderneming</h4>
+                <h5>
+                    Team Lead/Programmer
+                    <span class="en">(Mar 2014 - May 2016)</span>
+                    <span class="nl">(mar. 2014 - mei 2016)</span>
+                </h5><br>
+                <div class="experience-skills">
+                    <span class="en">Game Engine Dev., Physics &amp; Graphics, C#, JavaScript</span>
+                    <span class="nl">Game-engines, Natuurkunde &amp; Graphisch, C#, JavaScript</span>
+                </div>
+                <ul>
+                    <li class="en">
+                        Lead a rotating group of peers across various game &amp; multimedia projects; see projects at
+                        <a href="http://thunderlab.net/games" target="_blank">http://thunderlab.net/games</a>
+                    </li>
+                    <li class="nl">
+                        Lied een roterende group van leeftijdsgenoten over verscheidene speel en multimedia projecten.
+                        Bekijk projecten op <a href="http://thunderlab.net/games" target="_blank">http://thunderlab.net/games</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="experience internship">
                 <h4>Rochester Institute of Technology Libraries<span>, Rochester, NY</span></h4>
-                <h5>Student Web Developer/Designer <span>(Sep 2013 - May 2015)</span></h5><br>
+                <h5>
+                    <span class="en">Student Web Developer/Designer <span>(Sep 2013 - May 2015)</span></span>
+                    <span class="nl">Student Webontwikkelaar/Ontwerper <span>(sep. 2013 - mei 2015)</span></span>
+                </h5><br>
                 <div class="experience-skills">JQuery, HTML, CSS, UI/UX, Ruby, PHP, MySQL</div>
-                <ul><li>Built &amp; maintained library web tools and interfaces; see record of projects at <a href="http://thunderlab.net/TWC">http://thunderlab.net/TWC</a></li></ul>
+                <ul>
+                    <li class="en">
+                        Built &amp; maintained library web tools and interfaces; see record of projects at
+                        <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
+                    </li>
+                    <li class="nl">
+                        Gebouwde & handhaafde bibliotheek webtools en interfaces. Bekijk verslag van
+                        projecten op <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="experience internship">
                 <h4>Vector Marketing Corporation<span>, Rocky Ridge, OH</span></h4>
-                <h5>Sales Representative <span>(Summer 2013, Summer 2014)</span></h5>
+                <h5>
+                    <span class="en">Sales Representative <span>(Summer 2013, Summer 2014)</span></span>
+                    <span class="nl">Verkoop Vertegenwoordiger <span>(Zomer 2013, Zomer 2014)</span></span>
+                </h5>
                 <ul>
-                    <li>Scheduled and performed in-home demonstrations of Cutco Cutlery; $11,000 career sales, promoted to Key Staff, accepted into the Leadership Academy</li>
+                    <li class="en">
+                        Scheduled and performed in-home demonstrations of Cutco Cutlery: $11,000 career sales, promoted
+                        to Key Staff, accepted into the Leadership Academy
+                    </li>
+                    <li class="nl">
+                        Plande en voerde demonstraties aan huis van Cutco bestek uit. $11,000 carrière verkoop, promoveerde
+                        tot Key Staff, en nam aan Leadership Academy deel
+                    </li>
                 </ul>
             </div>
         </section>
 
         <section class="hobbies">
-            <h3>Hobbies &amp; Civic Engagement</h3>
+            <h3 class="en">Hobbies &amp; Civic Engagement</h3>
+            <h3 class="nl">Hobby's en Maatschappelijk Engagement</h3>
             <ul>
                 <li>
-                    <h4>Rock Climbing & Alpine Sports</h4>
-                    Snowboarding (since 2005), Sport Climbing (2017), Backpacking & Mountaineering (2018)
+                    <h4>
+                        <span class="en">Rock Climbing & Alpine Sports</span>
+                        <span class="nl">Rotsklimmen en Alpine Sporten</span>
+                    </h4>
+                    <span class="en">Snowboarding (since 2005), Sport Climbing (2017), Backpacking & Mountaineering (2018)</span>
+                    <span class="nl">Snowboarding (sinds 2005), Sport Klimmen (2017), Backpacken en Bergbeklimmen (2018)</span>
                 </li>
                 <li>
-                    <h4>Active Transportation Advocacy</h4>
-                    Engaged with biking and walking advocacy since 2019; ground-level involvement on safe-streets, transit, pedestrianization and urban greening projects
+                    <h4>
+                        <span class="en">Active Transportation Advocacy</span>
+                        <span class="nl">Advocatuur Voor Actief Transport</span>
+                    </h4>
+                    <span class="en">
+                        Engaged with biking and walking advocacy since 2019; ground-level involvement on safe-streets,
+                        transit, pedestrianization and urban greening projects
+                    </span>
+                    <span class="nl">
+                        Betrokken bij advocatuur voor fietsen and voetganger sinds 2019. Lokaal betrokkenheid bij veilige
+                        straten, openbaar vervoer, voetgangersgebied en stedelijke vergroening projecten
+                    </span>
                 </li>
                 <li>
-                    <h4>Woodworking & Construction</h4>
-                    Build small furniture and volunteer with local affordable housing construction organization (Habitat for Humanity)
+                    <h4>
+                        <span class="en">Woodworking & Construction</span>
+                        <span class="nl">Houtbewerking & Bouw</span>
+                    </h4>
+                    <span class="en">Build small furniture and volunteer with local affordable housing construction organization (Habitat for Humanity)</span>
+                    <span class="nl">Bouw kleine meubels en do vrijwilligerswerk bij lokale betaalbare huisvesting bouw organisatie (Habitat for Humanity)</span>
                 </li>
             </ul>
         </section>
