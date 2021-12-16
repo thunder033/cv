@@ -490,20 +490,27 @@
 
         .hobbies li {
             display: inline-block;
-            background: #ddad9e;
-            width: 15rem;
+            font-size: 10pt;
+            padding: .75em;
             height: 8rem;
+            margin-right: .25em;
             vertical-align: top;
             box-sizing: border-box;
-            border-radius: 8px;
-            padding: .75em;
-            font-size: 10pt;
-            border-bottom: 3px #ae2b06 solid;
-            margin-right: .25em;
+        }
+
+        .simple .hobbies li {
+            width: 14rem;
+        }
+
+        .simple .hobbies li + li {
+            border-left: 1px #333 solid;
         }
 
         .themed .hobbies li {
-
+            width: 15rem;
+            background: #ddad9e;
+            border-radius: 8px;
+            border-bottom: 3px #ae2b06 solid;
         }
 
         .hobbies li h4 {
@@ -533,7 +540,7 @@
         }
     </script>
 </head>
-<body class="normal-length nl themed">
+<body class="normal-length no-pii en themed">
 <div id="control-panel">
     <div class="control-set">
         <button class="en" onclick="setLanguage('en')">EN</button>
