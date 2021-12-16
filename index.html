@@ -5,14 +5,22 @@
     <title>Greg Rozmarynowycz</title>
     <style>
         html, body {
-            font-family: 'Open Sans', sans-serif;
-            font-family: Bahnschrift;
+            font-family: Bahnschrift, Calibri, sans-serif;
             margin: 0 auto;
             background: #333;
             -webkit-print-color-adjust: exact !important;
             -webkit-font-smoothing: antialiased;
         }
 
+        body.simple {
+            font-family: Calibri, Cambria, sans-serif;
+        }
+
+        body.simple .themed,
+        body.simple .accent-1,
+        body.simple .accent-red,
+        body.simple .portrait,
+        body.themed .simple,
         .no-pii .pii,
         .normal-length .verbose,
         body.en .page .nl,
@@ -28,6 +36,10 @@
             height: 29.7cm;
             box-sizing: border-box;
             overflow: hidden;
+        }
+
+        .simple .page {
+            padding: .5in;
         }
 
         #control-panel+.page {
@@ -83,11 +95,29 @@
             border: 0;
         }
 
+        .control-set {
+            display: inline-block;
+        }
+
+        .control-set + .control-set {
+            border-left: 1px #aaa solid;
+            padding-left: .3em;
+            margin-left: .1em;
+        }
+
         body.nl #control-panel .nl, body.en #control-panel .en {
             background: #ae2b06;
         }
 
-        header {
+        .print-instructions {
+            background: #eee;
+            border-radius: .3em;
+            padding: .2em .5em;
+            display: inline-block;
+            margin-left: .5em;
+        }
+
+        .themed header {
             background: #ddad9e;
             padding: .5em 1.5em 1em;
             box-sizing: border-box;
@@ -100,9 +130,17 @@
             font-size: 17pt;
             color: #6e3828;
             margin-bottom: 0;
+            display: inline-block;
+        }
+
+        .simple header h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .themed header h1 {
             background: #ddad9e;
             position: relative;
-            display: inline-block;
         }
 
         .accent-red, .accent-red:before, .accent-red:after {
@@ -141,16 +179,26 @@
         header ul {
             text-align: right;
             list-style: none;
-            margin: 0;
+            margin: 0 0 0 3em;
             padding: .75em;
-            border-radius: 8px;
             float: right;
-            background: #6e3828;
-            border-bottom: 3px #ae2b06 solid;
             position: relative;
         }
 
-        header ul:before, header ul:after {
+        .simple header ul {
+            margin: 0;
+            padding-top: 0;
+            padding-right: 0;
+        }
+
+        .themed header ul {
+            border-radius: 8px;
+            background: #6e3828;
+            border-bottom: 3px #ae2b06 solid;
+        }
+
+        .themed header ul:before,
+        .themed header ul:after {
             position: absolute;
             background: #6e3828;
             border-radius: 8px;
@@ -162,17 +210,20 @@
             border-bottom: 3px #ae2b06 solid;
         }
 
-        header ul:after {
+        .themed header ul:after {
             width: .75em;
             left: -2.75em;
         }
 
-        header a { color: #ddad9e; }
+        .themed header a { color: #ddad9e; }
 
         header ul li {
-            color: #ddad9e;
             margin: .3em;
             font-size: 10pt;
+        }
+
+        .themed header ul li {
+            color: #ddad9e;
         }
 
         .icon {
@@ -220,6 +271,10 @@
             margin: .5em 0;
         }
 
+        .simple .personal-detail {
+            margin-left: 0;
+        }
+
         .personal-detail .icon {
             float: none;
             vertical-align: sub;
@@ -231,13 +286,23 @@
             float: right;
             width: 18em;
             font-size: 10pt;
-            background: #ddad9e;
+            background: #ddd;
             padding: .75em;
             box-sizing: border-box;
+        }
+
+        .simple .education {
+            padding-top: 0;
+            margin-left: .5em;
+            text-align: right;
+        }
+
+        .themed .education {
             margin: .5em 1.75em .5em 1em;
             position: relative;
             border-radius: 8px;
             border-bottom: 3px #6e3828 solid;
+            background: #ddad9e;
         }
 
         .education h3 {
@@ -267,13 +332,33 @@
             margin-top: -2em;
         }
 
-        .skills {
-            position: relative;
-            margin-left: 1.75em;
-            padding-left: 2em;
+        .simple .summary {
+            margin-left: 0;
         }
 
-        .skills h3 {
+        .simple .skills h3,
+        .work-experience h3,
+        .hobbies h3 {
+            color: #6e3828;
+            font-size: 13pt;
+            margin: .75em 0 0;
+        }
+
+        .themed .work-experience h3,
+        .themed .hobbies h3 {
+            margin-left: 1.5em;
+        }
+
+        .skills {
+            position: relative;
+        }
+
+        .themed .skills {
+            padding-left: 2em;
+            margin-left: 1.75em;
+        }
+
+        .themed .skills h3 {
             font-size: 11pt;
             transform-origin: top left;
             transform: rotate(-90deg);
@@ -285,7 +370,8 @@
             left: 0;
         }
 
-        .skills h3:after, .skills h3:before {
+        .themed .skills h3:after,
+        .themed .skills h3:before {
             bottom: 0;
             left: 7.75em;
             width: 1.5em;
@@ -316,17 +402,21 @@
             font-size: 9.5pt;
         }
 
-        .work-experience h3, .hobbies h3 {
-            color: #6e3828;
-            font-size: 13pt;
-            margin: .75em 0 0 1.5em;
-        }
-
         .experience {
-            padding: .5em 1.5em .5em 1em;
-            margin: .75em 1em;
+            padding: .5em 0 .5em 1em;
+            margin: .75em 0;
             border-left: 3px #ddad9e solid;
             border-radius: 8px;
+        }
+
+        .simple .experience {
+            margin: .5em 0 .5em -1em;
+            padding: .5em 0 .25em 1em;
+        }
+
+        .themed .experience {
+            margin: .7em 1em;
+            padding: .5em 1.5em .5em 1em;
         }
 
         .experience h4 {
@@ -367,18 +457,33 @@
             content: '| ';
         }
 
-        .internship {
+        .experience.internship {
             display: inline-block;
             width: 27em;
             padding-right: 0;
             margin-top: 0;
         }
 
+        .simple .experience.internship {
+            padding-right: 0;
+            margin-top: 0;
+            width: 26.5em;
+        }
+
+        .simple .experience.internship:nth-child(odd) {
+            margin-right: 1em;
+        }
+
         #page-2 {
             padding-top: 3em;
         }
 
-        .hobbies ul {
+        .simple .hobbies ul {
+            margin: .5em 0 0;
+            padding: 0;
+        }
+
+        .themed .hobbies ul {
             margin: .5em 0 0 1.5em;
             padding: 0;
         }
@@ -397,33 +502,61 @@
             margin-right: .25em;
         }
 
+        .themed .hobbies li {
+
+        }
+
         .hobbies li h4 {
             color: #6e3828;
             margin: 0 0 .25em;
         }
     </style>
     <script>
-        function setLanguage(lang) {
-            const languageOptions = ['en', 'nl'];
+        function applyOption(option, optionSet) {
             const classes = document.querySelector('body').className
                 .split(' ')
-                .filter((v) => !languageOptions.includes(v));
-            document.querySelector('body').className = [...classes, lang].join(' ');
+                .filter((v) => !optionSet.includes(v));
+            document.querySelector('body').className = [...classes, option].join(' ');
+        }
 
+        function setLanguage(lang) {
+            applyOption(lang, ['en', 'nl']);
+        }
+
+        function setMode(mode) {
+            applyOption(mode, ['simple', 'themed']);
+        }
+
+        function togglePII() {
+            const mode = document.querySelector('body').className.includes('no-pii') ? '' : 'no-pii';
+            applyOption(mode, ['no-pii']);
         }
     </script>
 </head>
-<body class="normal-length nl">
+<body class="normal-length nl themed">
 <div id="control-panel">
-    <button class="en" onclick="setLanguage('en')">English</button>
-    <button class="nl" onclick="setLanguage('nl')">Nederlands</button>
-    <span>Save as PDF: Print with "Save as PDF", A4 Page Size</span>
+    <div class="control-set">
+        <button class="en" onclick="setLanguage('en')">EN</button>
+        <button class="nl" onclick="setLanguage('nl')">NL</button>
+    </div>
+
+    <div class="control-set">
+        <button class="pi-toggle" onclick="togglePII()">Toggle PII</button>
+    </div>
+
+    <div class="control-set">
+        <button class="themed" onclick="setMode('simple')">Simple</button>
+        <button class="simple" onclick="setMode('themed')">Themed</button>
+    </div>
+
+    <span class="print-instructions"><b>Save as PDF:</b> Print with "Save as PDF", A4 Page Size</span>
 </div>
 <div id="page-1" class="page">
     <header>
         <ul id="contact">
-            <li>+1 440 541 7907</li>
-            <li>greg@thunderlab.net</li>
+            <li class="themed">+1 440 541 7907</li>
+            <li class="themed">greg@thunderlab.net</li>
+            <li class="simple">+1 440 541 7907; greg@thunderlab.net</li>
             <li><a href="http://linkedin.com/in/gregroz"><img class="icon" src="linkedin.png" />linkedin.com/in/gregroz</a></li>
             <li><a href="http://github.com/thunder033"><img class="icon" src="github.png" />github.com/thunder033</a></li>
         </ul>
@@ -480,6 +613,10 @@
         </div>
 
         <div class="skills">
+            <h3 class="simple">
+                <span class="en">Skills</span>
+                <span class="nl">Vaardigheden</span>
+            </h3>
             <h3 class="accent-red">
                 <span class="en">Skills</span>
                 <span class="nl">Vaardigheden</span>
@@ -719,6 +856,7 @@
                 </ul>
             </div>
 
+            <div>
             <div class="experience internship">
                 <h4>
                     Target<span>, Minneapolis, MN</span>
@@ -760,6 +898,7 @@
                         Angular/Node.JS presentatielaag, dat consumeerde een RESTful bedrijfslogica service.
                     </li>
                 </ul>
+            </div>
             </div>
         </section>
     </main>
