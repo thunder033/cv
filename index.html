@@ -286,7 +286,7 @@
             width: 15rem;
             font-size: .825em;
             background: #ddd;
-            padding: .75rem;
+            padding: .25rem .75rem .75rem;
             box-sizing: border-box;
         }
 
@@ -412,7 +412,7 @@
         }
 
         .themed .experience {
-            margin: .55rem .8rem;
+            margin: .5rem .8rem 0;
             padding: .4rem 1.5rem .4rem 1rem;
         }
 
@@ -450,6 +450,10 @@
             font-family: Arial, sans-serif;
         }
 
+        .experience li span {
+            white-space: nowrap;
+        }
+
         .experience-skills {
             color: #777;
         }
@@ -460,15 +464,17 @@
 
         .experience.internship {
             display: inline-block;
-            width: 27em;
             padding-right: 0;
-            margin-top: 0;
+            width: 20.75rem;
         }
 
-        .simple .experience.internship {
-            padding-right: 0;
-            margin-top: 0;
-            width: 20.75rem;
+        .experience.internship ul {
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .experience.internship li {
+            list-style: none;
         }
 
         .simple .experience.internship:nth-child(odd) {
@@ -517,6 +523,10 @@
         .hobbies li h4 {
             color: #6e3828;
             margin: 0 0 .25em;
+        }
+
+        .review {
+            color: #ff0059 !important;
         }
     </style>
     <script>
@@ -606,17 +616,19 @@
             <span class="nl"><b>Engels</b> - moedertaal</span><br>
             <span class="en"><b>Dutch</b> - B1/Intermediate</span>
             <span class="nl"><b>Nederlands</b> - B1</span><br>
-            <span class="en">French - A1</span>
-            <span class="nl">Frans - A1</span>
+<!--            <span class="en">French - A1</span>-->
+<!--            <span class="nl">Frans - A1</span>-->
             <div class="accent-red accent-2"></div>
         </aside>
 
         <div class="summary">
             <span class="en">
-                Driven, creative, conscientious full-stack engineer. Five years of industry experience applying a disciplined approach across various domains.
+                Driven, creative, conscientious full-stack engineer. Five years of industry experience applying a
+                disciplined approach across various domains.
             </span>
             <span class="nl">
-                Gedreven, creatieve, en een nauwgezette full-stack engineer. Ik beschik over vijf jaar industriële ervaring, waardoor ik binnen verschillende domeinen gedisciplineerd te werk kan gaan.
+                Gedreven, creatieve, en een nauwgezette full-stack engineer. Ik beschik over vijf jaar industriële
+                ervaring, waardoor ik binnen verschillende domeinen gedisciplineerd te werk kan gaan.
             </span>
         </div>
 
@@ -639,7 +651,7 @@
                     <li>REST, Websockets/Node.JS</li>
                     <li>
                         <span class="en">Real-time Architecture</span>
-                        <span class="nl">Real-time architectuur</span>
+                        <span class="nl">Realtime architectuur</span>
                     </li>
                     <li>
                         <span class="en">UI/UX Design</span>
@@ -714,48 +726,43 @@
                 <h5>
                     Sr. Frontend Engineer - Flight, Frontend-Lead
                     <span class="en">(Oct 2019 &ndash; )</span>
-                    <span class="nl">(october 2019 &ndash; helen)</span>
+                    <span class="nl">(october 2019 &ndash; heden)</span>
                 </h5><br/>
                 <span class="experience-skills">
                     <span class="en">Angular/ReactiveX, Real-time & Edge Computing, iOS/Android, System Architecture</span>
                     <span class="nl">Angular/ReactiveX, Realtime & Edge Computing, iOS/Android, Systeem Architectuur</span>
                 </span>
                 <ul>
-                    <li>
-                        Delivered ambitious reality capture and edge computing features while improving performance, reliability, analytics, instrumentation.
+                    <li class="en">
+                        Delivered flagship projects across mission planning, flight and capture control, and on-device
+                        media processing features. Guided series of architecture initiatives to improve core system
+                        performance, reliability, analytics, instrumentation.
                     </li>
-                    <li>
-                        Developed architecture roadmap and guided a systematic technical overhaul of flight planning UI, flight and capture control, and
-                        on-device media processing systems.
+                    <li class="nl">
+                        Ik leverde projecten over functies voor missieplanning, vlucht- en vangstcontrole, en
+                        mediaverwerking op mobiele apparaten. Ook had ik de leiding over architectuurinitiatieven
+                        waardoor de systeemprestatie, -betrouwbaarheid, -analyse, en <span>-instrumentatie</span> verbeterd zijn.
                     </li>
-                    <li>
-                        Increased development velocity across the team with build out of extensive development tooling, simulators, documentation.
+                    <li class="en">
+                        Increased development velocity across the team with build out of extensive development tooling,
+                        simulators, and documentation.
+                    </li>
+                    <li class="nl">
+                        Ik heb de ontwikkelingssnelheid in het hele team verhoogd door de ontwikkelingsgereedschappen,
+                        simulatoren, en documentatie uit te breiden.
                     </li>
 <!--                    <li class="en">-->
 <!--                        Head series of architecture initiatives to achieve and sustain enterprise-grade performance on flight planning and control systems.-->
 <!--                        Decreased app startup time 50% and lifted 33% more flights above minimum percentile framerate threshold.-->
 <!--                        Define approach to reliably process and upload media from drone flights at the edge, under variable network conditions.-->
 <!--                    </li>-->
-<!--                    <li class="nl">-->
-<!--                        Leid serie van architectuur initiatieven voor enterprise-grade uitvoering on vlucht planning en controlesystemen.-->
-<!--                        Verminderde app opstarttijd 50% en tilde 33% meer vluchten boven minimale percentiel framerate-drempel op.-->
-<!--                        Bepaalde aanpak om betrouwbaar verwerken en uploaden media van dronevluchten op de rand, onder variabele netwerkvoorwaarden.-->
-<!--                    </li>-->
 <!--                    <li class="en">-->
 <!--                        Guide implementation of frontend development patterns and approach to ensure consistent reliability and instrumentation across new and existing-->
 <!--                        features.-->
 <!--                    </li>-->
-<!--                    <li class="nl">-->
-<!--                        Begeleid de implementatie van frontend ontwikkelingspatronen en aanpak om consistente betrouwbaarheid instrumentatie te garanderen in nieuwe en-->
-<!--                        bestaande functies.-->
-<!--                    </li>-->
 <!--                    <li class="en">-->
 <!--                        Enabled flight UI automation with novel UI behavior capture and heuristic assertion framework, physics-based drone-->
 <!--                        simulation, and faster-than-real-time execution. Increased UI development velocity and significantly reduces refactoring risk.-->
-<!--                    </li>-->
-<!--                    <li class="nl">-->
-<!--                        Inschakelde vlucht UI-automatisering met vernieuwende UI-gedrag vastleggen en heuristische bewering kader, op fysica gebaseerde-->
-<!--                        dronesimulatie, en sneller dan realtime executie. Nam UI ontwikkelen snelheid en verminderd refactoring risico toe.-->
 <!--                    </li>-->
                 </ul>
             </div>
@@ -777,20 +784,22 @@
                 </span>
                 <ul>
                     <li class="en">
-                        Drive adoption of new technical governance model, boosting Scrum team morale through process reforms focused on
-                        engineering excellence, diligent analysis and triage of incoming work, and resolution of technical debt
+                        Drove adoption of new technical governance model, boosting Scrum team efficiency and morale
+                        through process reforms focused on engineering excellence and diligent analysis of incoming
+                        work.
                     </li>
                     <li class="nl">
-                        Dreef adoptie van nieuw technisch bestuursmodel, dat Scrum team moreel versterkt door proceshervormingen gericht op
-                        technische uitmuntendheid, ijverige analyse triage van inkomend werk, en oplossing van technische schuld
+                        Ik zorgde voor de adoptie van nieuw technisch bestuursmodel waardoor de efficiëntie en moreel
+                        van het Scrumteam verbeterd was. De proceshervormingen omvatten een gericht op technische
+                        uitmuntendheid en een diepgaande analyse van inkomend werk.
                     </li>
                     <li class="en">
-                        Introduced JS component testing strategy to Chase authenticated web app UI; prototyped and piloted a test harness for internal
-                        JS framework, pushed its development and uptake to head of framework intake queue, and advised implementation
+                        Collaborated with internal framework team and other team leads to design and prioritize API
+                        changes that reduced defects and streamlined feature development.
                     </li>
                     <li class="nl">
-                        Introduceerde JS-component testing strategie aan Chase geauthenticeerd web app UI: Maakte prototype en testte een testharnas
-                        voor intern JS-framework, duwde het ontwikkelen en opname prioriteit, en adviseerde implementatie
+                        Ik werkte samen met het interne kaderteam en andere teamleiders om het ontwerp en prioritering
+                        van API veranderen waardoor het percentage defecten en ontwikkelingssnelheid verbeterd was.
                     </li>
                 </ul>
 
@@ -799,26 +808,27 @@
                     <span class="nl">(november 2018 &ndash; april 2019)</span>
                 </h5>
                 <span class="experience-skills">
-                    <span class="en">JavaScript/TypeScript, Web Accessibility & Security, CI/CD</span>
-                    <span class="nl">JavaScript/TypeScript, Webtoegankelijkheid &amp; Veiligheid, CI/CD</span>
+                    <span class="en">JavaScript/TypeScript, Web Accessibility &amp; Security, CI/CD</span>
+                    <span class="nl">JavaScript/TypeScript, Webtoegankelijkheid &amp; -beveiliging, CI/CD</span>
                 </span>
                 <ul>
                     <li class="en">
-                        Re-architectured key Chase.com UI module impacted by substantial tech debt, to cut initial load time 95%, with capability to
-                        deploy upgrade immediately and incrementally migrate 50 features, facilitating thousands of user scenarios
-                    </li>
-                    <li class="nl">
-                        Ontwierp de architectuur van belangrijke Chase.com UI-module opnieuw, waardoor de bestaande laadtijd met 95% wordt verkort.
-                        Gebruikte toenemende strategie om eerst verbeteringen aan de belangrijkste functies aan te brengen.
+                        Re-architectured key Chase.com UI module impacted by substantial tech debt, to cut initial load
+                        time 95%, with capability to deploy upgrade immediately and incrementally migrate 50 features,
+                        facilitating thousands of user scenarios
                     </li>
                     <li class="en">
-                        Oversaw knowledge transfer of aggregator access UI development to new team, built extensive technical documentation, and
-                        advised on new features to enable seamless project transition and near-continual feature development
+                        Oversaw knowledge transfer of aggregator access UI development to new team, built extensive
+                        technical documentation, and advised on new features to enable seamless project transition and
+                        near-continual feature development
                     </li>
                     <li class="nl">
-                        Begeleidde naadloze overgang van Aggregator Access project naar nieuw team: Overzag kennisoverdracht, gebouwde uitgebreide
-                        technische documentatie, en adviseerde over nieuwe functies.
+                        Ik heb de architectuur van een belangrijke Chase.com UI-module opnieuw ontwikkeld waardoor de
+                        bestaande laadtijd met 95% verkort is. Ook begeleidde ik de overgang van het Aggregator Access
+                        project naar een nieuw team. Daarbij zag ik toe op kennisoverdracht, uitgebreide technische
+                        documentatie, en adviseerde ik over nieuwe functies.
                     </li>
+
                 </ul>
 
                 <h4>TEKSystems<span>, San Francisco, CA</span></h4>
@@ -829,14 +839,17 @@
                 </h5>
                 <ul>
                     <li class="en">
-                        Recognized for leading UI development of Chase aggregator access project; delivered key features, supporting complex
-                        integrations with dozens of third party services, while aligning disparate requirements from multiple business initiatives around a
-                        single implementation strategy. In the course of development, significantly reduced technical debt and feature regression rate.
+                        Recognized for leading UI development of Chase aggregator access project; delivered key
+                        features, supporting complex integrations with dozens of third party services, while aligning
+                        disparate requirements from multiple business initiatives around a single implementation
+                        strategy. In the course of development, significantly reduced technical debt and feature
+                        regression rate.
                     </li>
                     <li class="nl">
-                        Ik had leiding over de UI-ontwikkeling van het Chase Aggregator Access project. Daarbij leverde ik belangrijke functies om ingewikkelde integraties met
-                        tientallen diensten van derden te ondersteunen. Uitlijnde verscheidene vereisten van meerdere zakelijke initiatieven op
-                        een enkel implementatiestrategie. Tijdens ontwikkeling, verminderde technische schuld en defectenpercentage van bestaande functies.
+                        Ik had leiding over de UI-ontwikkeling van het Chase Aggregator Access project. Daarbij leverde
+                        ik belangrijke functies om ingewikkelde integraties van diensten van derden te ondersteunen.
+                        Tijdens de ontwikkeling verminderde de tech-schuld en het percentage defecten binnen bestaande
+                        functies.
                     </li>
                 </ul>
             </div>
@@ -849,27 +862,19 @@
                     <span class="nl">(juli 2017 - januari 2018)</span>
                 </h5>
                 <span class="experience-skills">
-                    <span class="en">REST, Java, TypeScript, Web Security, CI/CD, SQL</span>
-                    <span class="nl">REST, Java, TypeScript, Web Veiligheid, CI/CD, SQL</span>
+                    <span class="en">REST, Java, Web Security, CI/CD, SQL</span>
+                    <span class="nl">REST, Java, Webbeveiliging, CI/CD, SQL</span>
                 </span>
                 <ul>
                     <li class="en">
-                        Managed integration, security, and deployment of external vendor developed web
-                        service on Predix (Cloud Foundry) IIoT platform as lead technical contact. Assuming
-                        role mid-project, resolved all blockers and picked up outstanding tasks from vendor
+                        Managed integration, security, and deployment of external vendor developed web service on Predix
+                        (Cloud Foundry) IIoT platform as lead technical contact. Assuming role mid-project, resolved all
+                        blockers and picked up outstanding tasks from vendor
                     </li>
                     <li class="nl">
-                        Als hoofd technisch contact, beheerde integratie, veiligheid, en inzet van extern
-                        leverancier ontwikkelde webservice op Predix (Cloud Foundry) IIoT-platform. Lost blokkers
-                        en openstaande taken op.
-                    </li>
-                    <li class="en">
-                        Enabled deployment of Docker containers on new DCOS platform, providing
-                        enhanced persistence and programmatic deployments, with TypeScript build scripts
-                    </li>
-                    <li class="nl">
-                        Inschakelde inzet van Docker containers op nieuw DCOS-platform, om versterkte volharding
-                        en programmatisch inzetten, met TypeScript gebouw scripts.
+                        Als hoofd technisch contact, zorgde ik voor de integratie, veiligheid, en inzet van externe
+                        leveranciers. Ook ontwikkelde ik een webservice op Predix (Cloud Foundry) IIoT-platform. Daarbij
+                        rondde ik openstaande taken af.
                     </li>
                 </ul>
             </div>
@@ -884,7 +889,7 @@
                 <h5>Software Engineering Intern &ndash; Backend Engineering </h5><br>
                 <span class="experience-skills">
                     <span class="en">Groovy, Web Security, ReactiveX, Mongo DB, AWS, Agile</span>
-                    <span class="nl">Groovy, Web Veiligheid, ReactiveX, Mongo DB, AWS, Agile</span>
+                    <span class="nl">Groovy, Webbeveiliging, ReactiveX, Mongo DB, AWS, Agile</span>
                 </span>
                 <ul>
                     <li class="en">
@@ -892,8 +897,8 @@
                         diagnosing and resolving issues in Groovy Spring code base and Ansible playbooks
                     </li>
                     <li class="nl">
-                        Verbeterde gebruikerservaring van Target.com door verbeterd gegevensaggregatie,
-                        diagnose en oplossing van problemen in Groovy Spring codebasis en Ansible playbooks
+                        Ik droeg bij aan een verbeterde gebruikerservaring van Target.com door he diagnosticeren en
+                        oplossen van problemen in Groovy Spring codebasis en Ansible playbooks
                     </li>
                 </ul>
             </div>
@@ -904,7 +909,7 @@
                     <span class="en">(May 2015 - Jan 2016)</span>
                     <span class="nl">(mei 2015 - januari 2016)</span>
                 </h4>
-                <h5>Software Engineering Intern &ndash; QA Automation Engineering</h5><br>
+                <h5>Software Engineering Intern &ndash; QA Automation</h5><br>
                 <span class="experience-skills">AngularJS, Node.JS, UI Automation, TDD, AWS, Agile</span>
                 <ul>
                     <li class="en">
@@ -912,8 +917,46 @@
                         Angular/Node.JS presentation tier, consuming a RESTful business logic service
                     </li>
                     <li class="nl">
-                        Leverde kleine functies en ontwikkelde Selenium WebDriver testgevallen tegen een
-                        Angular/Node.JS presentatielaag, dat consumeerde een RESTful bedrijfslogica service.
+                        Ik ontwikkelde Selenium WebDriver testgevallen voor een Angular/Node.JS presentatielaag, dat
+                        consumeerde een RESTful bedrijfslogica service.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>ThunderLab<span>, Sheffield Village, OH</span> <span>(2009 - 2019)</span></h4>
+                <h5>
+                    <span class="en">Freelance Web Developer</span>
+                    <span class="nl">Freelance Webontwikkelaar</span>
+                </h5>
+                <span class="experience-skills">Web UI/UX, PHP, JavaScript</span>
+                <ul>
+                    <li class="en">
+                        Delivered & maintained websites for small businesses and local organizations on a
+                        contract basis; see portfolio at <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
+                    </li>
+                    <li class="nl">
+                        Ik heb een website ontworpen voor kleine ondernemingen en lokale organisaties op
+                        contractbasis. De portefeuille is te zien op <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience internship">
+                <h4>Rochester Institute of Technology Libraries<span>, Rochester, NY</span></h4>
+                <h5>
+                    <span class="en">Student Web Developer/Designer <span>(Sep 2013 - May 2015)</span></span>
+                    <span class="nl">Student Webontwikkelaar <span>(september 2013 - mei 2015)</span></span>
+                </h5><br>
+                <div class="experience-skills">JQuery, HTML, CSS, UI/UX, Ruby, PHP, MySQL</div>
+                <ul>
+                    <li class="en">
+                        Built &amp; maintained library web tools and interfaces; see record of projects at
+                        <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
+                    </li>
+                    <li class="nl">
+                        Ik ontwierp webtools voor bibliotheek. Het verslag van projecten is te vinden
+                        op <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
                     </li>
                 </ul>
             </div>
@@ -925,25 +968,6 @@
 <div id="page-2" class="page">
     <main>
         <section class="work-experience">
-            <div class="experience internship">
-                <h4>ThunderLab<span>, Sheffield Village, OH</span></h4>
-                <h5>
-                    <span class="en">Freelance Web Developer <span>(2009 - 2019)</span></span>
-                    <span class="nl">Freelance Webontwikkelaar <span>(2009 - 2019)</span></span>
-                </h5><br>
-                <div class="experience-skills">HTML, CSS, PHP, JavaScript, UX/UI</div>
-                <ul>
-                    <li class="en">
-                        Delivered & maintained websites for small businesses and local organizations on a
-                        contract basis; see portfolio at <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
-                    </li>
-                    <li class="nl">
-                        Leverde en handhaafde website voor kleine onderneming en lokale organisaties op
-                        contractbasis. Bekijk portefeuille op <a href="http://thunderlab.net/" target="_blank">http://thunderlab.net/</a>
-                    </li>
-                </ul>
-            </div>
-
             <div class="experience internship" style="display: none">
                 <h4 class="en">Thunderforge - Student Game Venture/Independent Study</h4>
                 <h4 class="nl">Thunderforge - Studentenonderneming</h4>
@@ -968,25 +992,6 @@
                 </ul>
             </div>
 
-            <div class="experience internship">
-                <h4>Rochester Institute of Technology Libraries<span>, Rochester, NY</span></h4>
-                <h5>
-                    <span class="en">Student Web Developer/Designer <span>(Sep 2013 - May 2015)</span></span>
-                    <span class="nl">Student Webontwikkelaar/Ontwerper <span>(sep. 2013 - mei 2015)</span></span>
-                </h5><br>
-                <div class="experience-skills">JQuery, HTML, CSS, UI/UX, Ruby, PHP, MySQL</div>
-                <ul>
-                    <li class="en">
-                        Built &amp; maintained library web tools and interfaces; see record of projects at
-                        <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
-                    </li>
-                    <li class="nl">
-                        Gebouwde & handhaafde bibliotheek webtools en interfaces. Bekijk verslag van
-                        projecten op <a href="http://thunderlab.net/TWC" target="_blank">http://thunderlab.net/TWC</a>
-                    </li>
-                </ul>
-            </div>
-
             <div class="experience internship" style="display: none">
                 <h4>Vector Marketing Corporation<span>, Rocky Ridge, OH</span></h4>
                 <h5>
@@ -998,7 +1003,7 @@
                         Scheduled and performed in-home demonstrations of Cutco Cutlery: $11,000 career sales, promoted
                         to Key Staff, accepted into the Leadership Academy
                     </li>
-                    <li class="nl">
+                    <li class="nl review">
                         Plande en voerde demonstraties aan huis van Cutco bestek uit. $ 11.000 carrière verkoop, promoveerde
                         tot Key Staff, en nam aan Leadership Academy deel
                     </li>
@@ -1008,7 +1013,7 @@
 
         <section class="hobbies">
             <h3 class="en">Hobbies &amp; Civic Engagement</h3>
-            <h3 class="nl">Hobby's en Maatschappelijk Engagement</h3>
+            <h3 class="nl">Hobby's en maatschappelijk betrokkenheid</h3>
             <ul>
                 <li>
                     <h4>
